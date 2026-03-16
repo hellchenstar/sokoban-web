@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>箱子别乱推</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="level-clear-modal" class="modal" aria-hidden="true">
+        <div class="modal-backdrop"></div>
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <p class="modal-eyebrow">Level Clear</p>
+            <h2 id="modal-title">这关你拿下了</h2>
+            <p id="modal-desc" class="modal-desc">是否进入下一关？</p>
+            <div class="modal-actions">
+                <button id="modal-stay-btn" class="modal-btn modal-btn-secondary" type="button">先等等</button>
+                <button id="modal-next-btn" class="modal-btn modal-btn-primary" type="button">进入下一关</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="app-shell">
+        <aside class="sidebar">
+            <div>
+                <p class="eyebrow">2D Sokoban</p>
+                <h1>箱子别乱推</h1>
+                <p class="intro">三关小型推箱子。方向键或按钮控制，目标是把所有箱子推进发光目标点。</p>
+            </div>
+
+            <div class="status-card">
+                <div class="status-row">
+                    <span>当前关卡</span>
+                    <strong id="level-label">第 1 关</strong>
+                </div>
+                <div class="status-row">
+                    <span>关卡计时</span>
+                    <strong id="timer-label">00:00</strong>
+                </div>
+                <div class="status-row">
+                    <span>步数</span>
+                    <strong id="moves-label">0</strong>
+                </div>
+            </div>
+
+            <div class="legend">
+                <div><span class="chip chip-player"></span> 玩家</div>
+                <div><span class="chip chip-box"></span> 箱子</div>
+                <div><span class="chip chip-target"></span> 目标点</div>
+                <div><span class="chip chip-wall"></span> 墙体</div>
+            </div>
+
+            <div class="actions">
+                <button id="restart-btn" type="button">重开本关</button>
+                <button id="next-btn" type="button" disabled>下一关</button>
+            </div>
+        </aside>
+
+        <main class="game-panel">
+            <section class="board-wrap">
+                <div id="board" class="board" aria-label="推箱子棋盘"></div>
+            </section>
+
+            <section class="controls-panel">
+                <div class="controls-header">
+                    <h2>方向控制</h2>
+                    <p>支持键盘方向键 / WASD</p>
+                </div>
+                <div class="pad">
+                    <button class="control-btn up" data-dir="up" type="button">↑</button>
+                    <button class="control-btn left" data-dir="left" type="button">←</button>
+                    <button class="control-btn right" data-dir="right" type="button">→</button>
+                    <button class="control-btn down" data-dir="down" type="button">↓</button>
+                </div>
+                <p id="message" class="message">准备好就开推。</p>
+            </section>
+        </main>
+    </div>
+
+    <script type="module" src="./src/main.js"></script>
+</body>
+</html>
