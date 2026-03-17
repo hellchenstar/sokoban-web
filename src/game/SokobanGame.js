@@ -128,8 +128,9 @@ export class SokobanGame {
             const deltaY = touch.clientY - touchStartY;
             if (Math.abs(deltaX) > 8 || Math.abs(deltaY) > 8) {
                 touchMoved = true;
+                event.preventDefault();
             }
-        }, { passive: true });
+        }, { passive: false });
 
         this.dom.board.addEventListener('touchend', (event) => {
             if (!touchMoved || event.changedTouches.length !== 1) {
