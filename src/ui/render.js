@@ -43,3 +43,20 @@ export function updateHeader(dom, levelName, moves) {
 export function updateMessage(messageEl, text) {
     messageEl.textContent = text;
 }
+
+export function updateBestRecord(dom, record) {
+    dom.bestMovesLabel.textContent = record ? String(record.moves) : '--';
+    dom.bestTimeLabel.textContent = record ? record.timeLabel : '--';
+}
+
+export function renderLevelOptions(selectEl, levels, activeIndex) {
+    selectEl.innerHTML = '';
+
+    levels.forEach((level, index) => {
+        const option = document.createElement('option');
+        option.value = String(index);
+        option.textContent = level.name;
+        option.selected = index === activeIndex;
+        selectEl.appendChild(option);
+    });
+}

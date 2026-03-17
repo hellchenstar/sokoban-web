@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta name="description" content="一个可直接开玩的轻量推箱子小游戏，支持键盘和方向按钮操作。">
     <title>箱子别乱推 | 轻量推箱子小游戏</title>
     <link rel="icon" href="data:,">
@@ -27,7 +27,7 @@
             <div>
                 <p class="eyebrow">2D Sokoban</p>
                 <h1>箱子别乱推</h1>
-                <p class="intro">三关小型推箱子。方向键或按钮控制，目标是把所有箱子推进发光目标点。</p>
+                <p class="intro">二十关渐进式推箱子。支持键盘、按钮、滑动、选关和撤销，目标是把所有箱子推进发光目标点。</p>
             </div>
 
             <div class="status-card">
@@ -43,6 +43,14 @@
                     <span>步数</span>
                     <strong id="moves-label">0</strong>
                 </div>
+                <div class="status-row">
+                    <span>最佳步数</span>
+                    <strong id="best-moves-label">--</strong>
+                </div>
+                <div class="status-row">
+                    <span>最佳时间</span>
+                    <strong id="best-time-label">--</strong>
+                </div>
             </div>
 
             <div class="legend">
@@ -53,6 +61,12 @@
             </div>
 
             <div class="actions">
+                <div class="level-picker">
+                    <label for="level-select">选关</label>
+                    <select id="level-select" aria-label="选择关卡"></select>
+                </div>
+                <button id="undo-btn" type="button" disabled>撤销一步</button>
+                <button id="prev-btn" type="button">上一关</button>
                 <button id="restart-btn" type="button">重开本关</button>
                 <button id="next-btn" type="button" disabled>下一关</button>
             </div>
@@ -66,7 +80,7 @@
             <section class="controls-panel">
                 <div class="controls-header">
                     <h2>方向控制</h2>
-                    <p>支持键盘方向键 / WASD</p>
+                    <p>支持键盘方向键 / WASD / 手机滑动</p>
                 </div>
                 <div class="pad">
                     <button class="control-btn up" data-dir="up" type="button">↑</button>

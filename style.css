@@ -17,6 +17,12 @@
 
 * {
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+    touch-action: manipulation;
 }
 
 body {
@@ -33,6 +39,7 @@ body {
 
 button {
     font: inherit;
+    touch-action: manipulation;
 }
 
 .modal {
@@ -218,6 +225,26 @@ h1 {
     margin-top: auto;
 }
 
+.level-picker {
+    display: grid;
+    gap: 6px;
+}
+
+.level-picker label {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.level-picker select {
+    width: 100%;
+    border: 1px solid rgba(120, 99, 73, 0.18);
+    border-radius: 14px;
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--ink);
+    outline: none;
+}
+
 .actions button,
 .control-btn {
     border: 0;
@@ -237,6 +264,11 @@ h1 {
     cursor: not-allowed;
     opacity: 0.45;
     box-shadow: none;
+}
+
+.level-picker select:focus {
+    border-color: rgba(217, 107, 43, 0.7);
+    box-shadow: 0 0 0 3px rgba(217, 107, 43, 0.14);
 }
 
 .actions button:not(:disabled):hover,

@@ -4,10 +4,10 @@ A lightweight Sokoban game built with plain HTML, CSS, and JavaScript.
 
 ## Features
 
-- Three playable levels
-- Timer and move counter
-- Keyboard and on-screen direction controls
-- In-page level clear modal
+- Twenty playable levels with increasing difficulty
+- Timer, move counter, local best records, and one-step undo
+- Keyboard, on-screen buttons, and mobile swipe controls
+- Previous/next navigation, level picker, and in-page level clear modal
 - Ready for GitHub Pages deployment
 
 ## Local Preview
